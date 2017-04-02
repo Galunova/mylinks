@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  database: mylinks_development
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: mylinks_test
+  pool: 5
+  timeout: 5000
+
+production:
