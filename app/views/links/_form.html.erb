@@ -1,0 +1,5 @@
+<%= form_for @link do |f| %>
+  <div><%= f.text_field :url, placeholder: 'ссылка' %></div>
+  <div>Приватная<%= check_box_tag :private, @link.private? %></div>
+  <%= f.submit %>
+<% end %>

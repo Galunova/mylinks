@@ -1,7 +1,10 @@
-<% if user_signed_in? %>
-  <div><%= current_user.email %></div>
-  <div><%= link_to 'Выход', destroy_user_session_path, method: :delete %></div>
-<% else %>
-  <div><%= link_to 'Войти', new_user_session_path %></div>
-  <div><%= link_to 'Зарегистрироваться', new_user_registration_path %></div>
-<% end %>
+<header style="border-bottom: 1px solid #333">
+  <% if user_signed_in? %>
+    <div><%= link_to 'Создать ссылку', new_link_path %></div>
+    <div><%= current_user.email %></div>
+    <div><%= link_to 'Выход', destroy_user_session_path, method: :delete %></div>
+  <% else %>
+    <div><%= link_to 'Войти', new_user_session_path %></div>
+    <div><%= link_to 'Зарегистрироваться', new_user_registration_path %></div>
+  <% end %>
+</header>
