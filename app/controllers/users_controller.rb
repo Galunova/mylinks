@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
-  
+
   def show
-    @user = User.find(params[:id])
+    redirect_to user_links_path(params[:id])
+  end
+
+  def links
+    @user = User.find(params[:user_id])
   end
 
 end
