@@ -12,6 +12,13 @@ namespace :db do
         username: Faker::Internet.user_name
       )
     end
+
+    dummy :link, 100 do
+      @user.links.create(
+        url: Faker::Internet.url,
+        private: [true, false].sample
+      )
+    end
   end
 
   def full_reset

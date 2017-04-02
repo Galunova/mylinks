@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'faker'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'pry'
