@@ -11,15 +11,15 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.create(links_params)
+    @link = current_user.links.create(links_params)
   end
 
   def edit
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
   end
 
   def update
-    @link = Link.update(links_params)
+    @link = current_user.links.update(links_params)
   end
 
   def destroy
