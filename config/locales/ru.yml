@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        link:
+          attributes:
+            url:
+              blank: "Ссылка не может быть пустой"
+              too_short: "Ссылка должна быть больше 6 символов"

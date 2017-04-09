@@ -5,6 +5,7 @@ class LinksController < ApplicationController
   end
 
   def show
+    @link = Link.find(params[:id])
   end
 
   def new
@@ -12,7 +13,12 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = current_user.links.create(links_params)
+    @link = current_user.links.new(links_params)
+    if @link.save
+      redirect_to link_path(@link.id)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -20,7 +26,12 @@ class LinksController < ApplicationController
   end
 
   def update
-    @link = current_user.links.update(links_params)
+    @link = current_user.links.find(params[:id])
+    if @link.update(links_params)
+      redirect_to link_path(@link.id)
+    else
+      render :edit
+    end
   end
 
   def destroy

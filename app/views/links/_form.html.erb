@@ -1,3 +1,10 @@
+<% if @link.errors.present? %>
+<ul>
+  <% @link.errors.each do |error, message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
 <%= form_for @link do |f| %>
   <div><%= f.text_field :url, placeholder: 'ссылка' %></div>
   <div>Приватная<%= f.check_box :private %></div>
