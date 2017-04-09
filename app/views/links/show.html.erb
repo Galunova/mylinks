@@ -1,2 +1,8 @@
 <h1>Show link</h1>
 <div><%= @link.url %></div>
+<% if @link.owner?(current_user) %>
+  <div>
+    <%= link_to 'Редактировать', edit_link_path(@link.id) %>
+    <%= link_to 'Destroy', link_path(@link.id), data: {confirm: 'Вы уверены?'}, method: :delete %>
+  </div>
+<% end %>

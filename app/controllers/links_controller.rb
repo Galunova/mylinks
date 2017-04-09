@@ -35,6 +35,9 @@ class LinksController < ApplicationController
   end
 
   def destroy
+    @link = current_user.links.find(params[:id])
+    @link.destroy
+    redirect_to root_path
   end
 
 private
